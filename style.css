@@ -516,14 +516,14 @@ h3 {
   color: var(--muted);
 }
 
-.sport-gallery {
+.sport-feature {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 6px;
+  grid-template-columns: minmax(0, 0.95fr) minmax(260px, 0.8fr);
+  gap: 18px;
+  align-items: center;
 }
 
-.sport-gallery figure {
+.sport-feature figure {
   margin: 0;
   overflow: hidden;
   background: var(--snow);
@@ -532,14 +532,13 @@ h3 {
   box-shadow: 0 10px 24px rgba(22, 34, 41, 0.08);
 }
 
-.sport-gallery img {
+.sport-feature img {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
 
-.sport-gallery figcaption {
+.sport-feature figcaption {
   padding: 10px 12px;
   color: var(--pine-dark);
   font-size: 0.82rem;
@@ -554,6 +553,30 @@ h3 {
 
 .info-panel {
   padding: 26px;
+}
+
+.education-photo-card {
+  overflow: hidden;
+  background: var(--snow);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(22, 34, 41, 0.06);
+}
+
+.education-photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.education-photo-card div {
+  padding: 20px 22px 22px;
+}
+
+.education-photo-card p {
+  color: var(--muted);
 }
 
 .clean-list {
@@ -750,8 +773,8 @@ body.reveal-ready .reveal.is-visible {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .sport-gallery {
-    grid-template-columns: 1fr;
+  .sport-feature {
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 0.85fr);
   }
 }
 
@@ -802,6 +825,14 @@ body.reveal-ready .reveal.is-visible {
   .profile-photo-card img {
     max-height: 420px;
   }
+
+  .sport-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .sport-feature figure {
+    margin-top: 4px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -850,7 +881,6 @@ body.reveal-ready .reveal.is-visible {
   .copy-button,
   .site-footer,
   .alpine-mark,
-  .sport-gallery,
   .skip-link {
     display: none !important;
   }
@@ -905,6 +935,7 @@ body.reveal-ready .reveal.is-visible {
   .strength-card,
   .role,
   .info-panel,
+  .education-photo-card,
   .language-card,
   .availability-box,
   .contact-card,
@@ -927,6 +958,15 @@ body.reveal-ready .reveal.is-visible {
 
   .profile-photo-card figcaption {
     text-align: left;
+  }
+
+  .sport-feature {
+    display: block;
+  }
+
+  .sport-feature figure,
+  .education-photo-card img {
+    display: none;
   }
 
   .availability-box h2,
