@@ -293,6 +293,29 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.profile-photo-card {
+  margin: 0 0 24px;
+}
+
+.profile-photo-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: var(--radius);
+  border: 1px solid rgba(23, 69, 65, 0.14);
+  box-shadow: 0 14px 30px rgba(18, 39, 40, 0.12);
+}
+
+.profile-photo-card figcaption {
+  margin-top: 10px;
+  color: var(--pine-dark);
+  font-size: 0.92rem;
+  font-weight: 800;
+  text-align: center;
+}
+
 .alpine-mark {
   height: 96px;
   margin-bottom: 26px;
@@ -491,6 +514,36 @@ h3 {
 
 .sport-list p {
   color: var(--muted);
+}
+
+.sport-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.sport-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  background: var(--snow);
+  border: 1px solid rgba(23, 69, 65, 0.14);
+  border-radius: var(--radius);
+  box-shadow: 0 10px 24px rgba(22, 34, 41, 0.08);
+}
+
+.sport-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.sport-gallery figcaption {
+  padding: 10px 12px;
+  color: var(--pine-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .info-grid {
@@ -696,6 +749,10 @@ body.reveal-ready .reveal.is-visible {
   .language-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .sport-gallery {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 680px) {
@@ -740,6 +797,10 @@ body.reveal-ready .reveal.is-visible {
   .availability-box,
   .contact-card {
     padding: 22px;
+  }
+
+  .profile-photo-card img {
+    max-height: 420px;
   }
 }
 
@@ -789,6 +850,7 @@ body.reveal-ready .reveal.is-visible {
   .copy-button,
   .site-footer,
   .alpine-mark,
+  .sport-gallery,
   .skip-link {
     display: none !important;
   }
@@ -839,6 +901,7 @@ body.reveal-ready .reveal.is-visible {
   }
 
   .season-panel,
+  .profile-photo-card,
   .strength-card,
   .role,
   .info-panel,
@@ -853,6 +916,17 @@ body.reveal-ready .reveal.is-visible {
     background: #ffffff !important;
     color: #111111 !important;
     break-inside: avoid;
+  }
+
+  .profile-photo-card img {
+    max-width: 120pt;
+    aspect-ratio: 1;
+    object-fit: cover;
+    box-shadow: none;
+  }
+
+  .profile-photo-card figcaption {
+    text-align: left;
   }
 
   .availability-box h2,
